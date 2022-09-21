@@ -7,7 +7,7 @@ int main(void)
 {
     char ch;
 
-    printf("Input : \n");						  //asking number
+    printf("Input : ");						  //asking number
     scanf_s("%c", &ch);							  //input number
     printf("%c's Ascii code is : %d\n", ch, ch);  //outcome
 

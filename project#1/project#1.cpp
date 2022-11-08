@@ -22,13 +22,6 @@ unsigned int GenRandNum(unsigned int nRange)
 	return nRes;
 }
 
-int game_counter(int game_count)
-{
-    game_count++;                                                       //show how many times game execute
-    printf("\tYour number of attempts: %d\n",game_count);
-    return game_count;
-}
-
 int input_number(void)
 {   
     int user_input = 0;
@@ -96,7 +89,7 @@ int main(void)
             hintNend(count, answer);                        //give hint when left life is 2            
         }           
         
-        game_count++;
+        game_count++;                                       //show how many times game execute
         printf("\tTry again? (y/n):  ");                    //asking to do program again
         fflush(stdin);
         scanf("%c", &retry);
@@ -104,19 +97,18 @@ int main(void)
         if(retry == 'y')                                    //give new chance to play again
         {
             count = GenRandNum(MAXCHANCE);                  //give random number again
-            game_counter(game_count);
             continue;
         }
         else if(retry == 'n')
         {
-            game_counter(game_count);
+            printf("\tYour number of attempts: %d\n",game_count);
             printf("\t\tThe End\n");
             printf("===================================================\n\n");
             break;                                          //break infinite while loop and end the code
         }
         else
         {
-            game_counter(game_count);
+            printf("\tYour number of attempts: %d\n",game_count);
             printf("\tSelect between yes or no\n");
             printf("\t\tThe End\n");
             printf("===================================================\n\n");

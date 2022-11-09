@@ -6,19 +6,19 @@
 
 int main (void)
 {
-    char stra[MAXLENGTH];
-    char strb[MAXLENGTH];
-    char strc[MAXLENGTH];
-    char temp[MAXLENGTH];
+    char stra[MAXLENGTH];                   //first input
+    char strb[MAXLENGTH];                   //second input  
+    char strc[MAXLENGTH];                   //third input
+    char temp[MAXLENGTH];                   //array for change word
 
     printf("Enter 3 words : ");
     scanf("%s%s%s", stra, strb, strc);
 
-    if(strcmp(stra,strb)>0)
+    if(strcmp(stra,strb)>0)                 //if stra is bigger than strb, strcmp get 1
     {
-        strcpy(temp, stra);
-        strcpy(stra, strb);
-        strcpy(strb, temp);
+        strcpy(temp, stra);                 //save stra at temp
+        strcpy(stra, strb);                 //put strb at stra
+        strcpy(strb, temp);                 //put original stra at strb 
     }
     if(strcmp(stra,strc)>0)
     {

@@ -63,7 +63,8 @@ int main(void)
 {
 	GenRandSeed();
 
-	int calArr[MAX], arrLength;
+	int calArr[MAX];
+	char arrLength;
 	double avg, val, standDeviat;
 
 
@@ -73,11 +74,6 @@ int main(void)
 	if(arrLength > 100)
 	{
 		printf("Error: Please enter lower than 100\n");
-		return 0;
-	}
-	else if (isdigit(arrLength) == '\0')
-	{
-		printf("Error: Please enter number\n");
 		return 0;
 	}
 

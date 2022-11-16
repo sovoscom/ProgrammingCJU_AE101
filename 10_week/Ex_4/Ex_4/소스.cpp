@@ -7,15 +7,13 @@ typedef struct {
 	double height;
 } marriage;
 
-void print(marriage* mp)
-{
-	print("Name : %s\n", mp->name);
-	print("age : %d\n", mp->age);
-}
-
 int main(void)
 {
-	marriage m1 = { "Andy", 22, 'm', 187.5 };
-	print(&m1);
+	marriage m1 = { "Andy", 22, 'm', 187.5 };	//put info on struct 
+	marriage *mp = &m1;							//put m1 on pointer
+	printf("Name : %s\n", mp -> name);			//print pointer info using '->'
+	printf("age : %d\n", mp -> age);
+	printf("sex : %c\n", mp -> sex);
+	printf("height : %.1lf\n", mp -> height);
 	return 0;
 }

@@ -45,24 +45,23 @@ void calScore(Student*score)
 void asending_List(Student* info)
 {
     Student temp;
-    int highest;
 
-    for(int i = 0; i<MAXMEMBER-1; i++)
+    for(int i = MAXMEMBER-1; i>0; i--)
     {
-        for(int j = 0; i<MAXMEMBER-i-1; j++)
+        for(int j = 0; j<i; j++)
         {
             if(info[j].total<info[j+1].total) 
             {
                 temp = info[j];
                 info[j] = info[j+1];
                 info[j+1] = temp;
-            }
+            }   
         }
     }
      
     for(int i = 0; i < 5; i++)
     {
-        printf("%5d %5s%5d%5d%5d%5d%5.1lf%5c\n",
+        printf("%5d %5s%5d%5d%5d%5d%6.1lf%5c\n",
             (info + i)->student_id, (info + i)->name, (info + i)->kor, 
             (info + i)->eng, (info + i)->mat, (info + i)->total,(info + i)->avg, (info + i)->grade);
     }
@@ -75,10 +74,11 @@ int main(void)
 
     for(int i = 0; i < MAXMEMBER; i++)
     {
-        printf("Enter Student id : ");
+        printf("Enter Student Id : ");
         scanf("%d", &list[i].student_id);
         printf("Enter Student name : ");
         scanf("%s", list[i].name);
+        getchar();
         printf("Enter Student score (ex: 90 90 90) : ");
         scanf("%d%d%d", &list[i].kor, &list[i].eng, &list[i].mat);
     }

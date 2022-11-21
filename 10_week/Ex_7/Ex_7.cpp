@@ -16,16 +16,18 @@ typedef struct student{
     char grade;
 } Student;
 
+//print all structure 
 void print_struct(Student* info)
 {
     for(int i = 0; i < 5; i++)
     {
-        printf("%5d %5s%5d%5d%5d%5d%5.1lf%5c\n",
+        printf("%5d %5s%5d%5d%5d%5d%6.1lf%5c\n",
             (info + i)->student_id, (info + i)->name, (info + i)->kor, 
             (info + i)->eng, (info + i)->mat, (info + i)->total,(info + i)->avg, (info + i)->grade);
     }
 }
 
+//calculate total, average score and grade 
 void calScore(Student*score)
 {
     for(int i = 0; i<MAXMEMBER; i++)
@@ -42,17 +44,18 @@ void calScore(Student*score)
     }
 }
 
+//arrange student list by total score
 void asending_List(Student* info)
 {
-    Student temp;
+    Student temp;                               //casting temp to put info temporarily
 
-    for(int i = MAXMEMBER-1; i>0; i--)
+    for(int i = MAXMEMBER-1; i>0; i--)          //use bubble sort to arrange list to asending order
     {
         for(int j = 0; j<i; j++)
         {
-            if(info[j].total<info[j+1].total) 
+            if(info[j].total<info[j+1].total)   //compare total score
             {
-                temp = info[j];
+                temp = info[j];                 // changing order
                 info[j] = info[j+1];
                 info[j+1] = temp;
             }   
@@ -72,6 +75,7 @@ int main(void)
 {
     Student list[MAXMEMBER] = {0};
 
+    //enter info about students
     for(int i = 0; i < MAXMEMBER; i++)
     {
         printf("Enter Student Id : ");
